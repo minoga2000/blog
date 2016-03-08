@@ -2,7 +2,12 @@
   get 'home/index'
   get '/' => 'home#index'
 
-  resource :contacts, only: [:new, :create]
+  #get 'contacts' => 'contacts#new'   как вариант
+  #resource :contacts, only: [:create]
+
+
+  resource :contacts, only: [:new, :create], path_names: { :new => ''}
+
   resources :articles
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
